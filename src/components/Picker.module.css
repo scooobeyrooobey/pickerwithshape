@@ -1,0 +1,116 @@
+.root {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  pointer-events: auto;
+}
+
+.frame {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Big-word slot lives directly above the track */
+.bigWordSlot {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 96px;
+  margin-bottom: 52px;
+}
+
+.bigWord {
+  display: inline-block;
+  font-family: 'EightiesComeback', serif;
+  font-size: 64px;
+  letter-spacing: -0.54px;
+  line-height: 1;
+  color: var(--color-text-dark);
+  white-space: nowrap;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+.track {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+}
+
+/* Track lines span the full root (viewport-wide) — they live outside the frame */
+.lineLeft,
+.lineRight {
+  position: absolute;
+  bottom: 42px; /* track is 84px tall and lives at frame bottom; center = 42px from bottom */
+  height: 2px;
+  background: rgba(235, 221, 203, 0.95);
+  border-radius: 1px;
+  pointer-events: none;
+  margin-bottom: -1px;
+  z-index: 0;
+}
+.lineLeft { left: 0; }
+.lineRight { right: 0; }
+
+.knob {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 84px;
+  height: 84px;
+  margin-top: -42px;
+  border-radius: 50%;
+  border: 2px solid rgba(235, 221, 203, 0.95);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  touch-action: none;
+  will-change: transform;
+  -webkit-tap-highlight-color: transparent;
+  z-index: 2;
+}
+
+.knob:active {
+  cursor: grabbing;
+}
+
+.knobIcon {
+  width: 36px;
+  height: 36px;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Wrapper that places the label horizontally; framer-motion handles rotate/lift inside. */
+.labelAnchor {
+  position: absolute;
+  bottom: calc(50% + 24px);
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 1;
+  display: inline-flex;
+  justify-content: center;
+}
+
+/* Arc label — sits above the line; rotates and lifts magnetically toward the knob */
+.arcLabel {
+  display: inline-block;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.32px;
+  color: var(--color-text-dark);
+  white-space: nowrap;
+  transform-origin: 50% 100%;
+  will-change: transform;
+}

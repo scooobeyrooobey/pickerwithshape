@@ -1,0 +1,29 @@
+:root {
+  /* Base */
+  --color-bg: #0C0B0B;
+  --color-bg-cream: #161513;
+
+  /* Text */
+  --color-text-dark: #EBDDCB;
+  --color-text-light: #fff4e6;
+  --color-text-cream: #fffbef;
+
+  /* Mesh gradient palette */
+  --color-warm-light: #ffb15f;
+  --color-warm-mid: #ff683e;
+  --color-warm-deep: #fe5121;
+  --color-cool-light: #c8e1a3;
+  --color-cool-mid: #6fb96a;
+  --color-cool-deep: #3a8b3f;
+
+  /* Mood-specific tints */
+  --color-mood-awful: #9350FF;   /* purple */
+  --color-mood-meh: #6C73D8;     /* indigo */
+  --color-mood-okay: #4595B0;    /* teal-blue */
+  --color-mood-good: #639847;    /* foliage green */
+  --color-mood-amazing: #F0AE8F; /* peach skin tone */
+
+  /* Layout */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}

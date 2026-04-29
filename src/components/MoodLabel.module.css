@@ -1,0 +1,21 @@
+.root {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88px;
+  pointer-events: none;
+  perspective: 600px;
+}
+
+.word {
+  position: absolute;
+  font-family: 'EightiesComeback', serif;
+  font-size: 64px;
+  letter-spacing: -0.54px;
+  color: var(--color-text-dark);
+  line-height: 1;
+  white-space: nowrap;
+  will-change: transform, opacity, filter;
+  transform-origin: center center;
+}
